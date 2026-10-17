@@ -1,0 +1,8 @@
+ite-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu { display: flex; gap: 1.5rem; }
+.menu a { text-decoration: none; }
+.menu a:hover { color: #0066cc; }

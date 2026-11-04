@@ -18,3 +18,7 @@
 .card--highlight {
   border: 2px solid #0066cc;
 }
+
+.num { 
+  text-align: right; 
+}

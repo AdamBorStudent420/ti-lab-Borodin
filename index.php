@@ -10,34 +10,50 @@ $cennik = [
   ['nazwa' => 'Wymiana dętki', 'cena' => 30],
 ];
 ?>
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Szprycha – serwis rowerowy</title>
+  <title><?= $firma ?> – serwis rowerowy</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <p class="logo">Szprycha</p>
+    <a class="logo" href="#">
+      <svg viewBox="0 0 120 64" width="72" height="38" role="img" aria-labelledby="logo-tytul">
+        <title id="logo-tytul">Szprycha</title>
+        <circle cx="28" cy="42" r="18" fill="none" stroke="currentColor" stroke-width="4"/>
+        <circle cx="92" cy="42" r="18" fill="none" stroke="currentColor" stroke-width="4"/>
+        <polyline points="28,42 56,42 46,20 80,20 92,42 56,42 80,20" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  stroke-width="4" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+      </svg>
+      <span><?= $firma ?></span>
+    </a>
+
     <button class="menu-toggle" aria-expanded="false" aria-label="Menu">Menu</button>
+
     <nav class="menu">
       <a href="#uslugi">Usługi</a>
       <a href="#cennik">Cennik</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
+
   <main>
     <section id="uslugi">
       <h2>Usługi</h2>
-      <p>Przeglądy okresowe, regulacja napędu, centrowanie kół, serwis hamulców hydraulicznych.</p>
+      <p>Oferujemy kompleksowy serwis rowerów miejskich, szosowych i MTB. Zadbamy o każdy detal Twojego sprzętu.</p>
     </section>
 
     <section id="cennik">
       <h2>Cennik</h2>
+      <p>Wybierz jeden z pakietów lub skorzystaj z pojedynczych usług serwisowych.</p>
 
       <div class="cards">
         <article class="card card--highlight">
@@ -48,14 +64,14 @@ $cennik = [
         </article>
 
         <article class="card">
-          <h3>Serwis</h3>
-          <p>Napęd.</p>
+          <h3>Serwis napędu</h3>
+          <p>Czyszczenie i smarowanie.</p>
           <p class="card__price">od 60 zł</p>
         </article>
 
         <article class="card">
-          <h3>Odpowietrzanie hamulców</h3>
-          <p>Hamulce.</p>
+          <h3>Hamulce</h3>
+          <p>Odpowietrzanie i regulacja.</p>
           <p class="card__price">od 50 zł</p>
         </article>
       </div>
@@ -76,14 +92,15 @@ $cennik = [
           <?php endforeach; ?>
         </tbody>
       </table>
-      
     </section>
   </main>
-  <footer id="kontakt"><h2>Kontakt</h2>
+
+  <footer id="kontakt">
+    <h2>Kontakt</h2>
     <p>Adres: ul. Rowerowa 12, Warszawa</p>
     <p>Telefon: <a href="tel:+48500100200">500 100 200</a></p>
     <p>E-mail: <a href="mailto:kontakt@szprycha.pl">kontakt@szprycha.pl</a></p>
-    <p>&copy; 2026 Szprycha – serwis rowerowy</p>
+    <p>&copy; <?= $rok ?> <?= $firma ?> – Wszelkie prawa zastrzeżone.</p>
   </footer>
 </body>
 </html>
